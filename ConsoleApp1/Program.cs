@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 /// <summary>
@@ -209,6 +210,50 @@ namespace ConsoleApp1
                 Console.WriteLine(++max);
                 Console.WriteLine(max + 64000000);
             }
+            ////////////////TYPY GENERYCZNE/////////////
+            //Kolekcje - zbiór obiektów, podobne do tablic, w stosunku do tablic mogą mieć: dynamiczny rozmiar, wiele rodzajów pojemników, zbiór metod do operacji na danych
+            //ArrayList - możemy przechowywać różne typy obiektów, występują pronlemy z pakowaniem i rozpakowaniem, nie zalecane
+            //Kolekcje generyczne - wykorzystują typy generyczne, brak pakowania i rozpakowania, bezpieczeństwo typu
+            //typ - klasa która zawiera parametr typu
+            //Kolekcje generyczne
+            //List <T>
+            //Stack<T>
+            //Queue<T>
+            //Dictionary<TKey, TValue>
+            //SortedSet<T>
+            List<int> lista = new List<int>(); //konieczna biblioteka using System.Collections.Generic , system powinien to podpowiedzieć
+            lista.Add(5);
+            lista.Add(1);
+            lista.Add(3);
+            //Metody List<t>
+            //Add(t)
+            //Clear()
+            //Contains(t)
+            //IndexOf(t)
+            //Insert(Int32,t)
+            //Remove(t), RemoveAt(Int32)
+            //Reverse()
+            //Sort()
+            //Tworzenie metod:
+            // typ zwracany nazwa <T> (T argument) {}
+            static void zamien<T>(T arg1, T arg2)
+            {
+                T obj = arg1;
+                arg1 = arg2;
+                arg2 = obj;
+            }
+            //ref i out
+            //Obiekt przekazywany jest przez referencję a nie wartość
+            //Powodują odwołanie do oryginalnego obiektu
+            // ref wymaga aby zmienna była juz zainicjalizowana
+            // out dopuszcza każdą zmienna
+
+
+            //ograniczenie typu
+            // typ zwracany nazwa <T> (T argument): [ograniczenie]{}
+            //np.struct,class,new(), nazwaklasybazowej, nazwabazowegointerfejsu
+            //klasy generyczne
+            //class nazwa<T> {}
         }
     }
 }
